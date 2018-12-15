@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生体侧数据导入导出系统1.0</title>
+    <script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="1.css"/>
+</head>
+<body>
+<formm>
+    <input type="file" onchange="importf(this)"
+           accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+</formm>
+<br/>
+<button onclick="downloadExl(jsono)">导出</button>
+<a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
+<button onclick="fillTable()">填充表格</button>
+<button onclick="getTableValue()">获取表格内容</button>
+
+<div id="excel-table"></div>
+<div>
+    <table id="data-table">
+        <tr id="head-row">
+            <th>年级编号</th>
+            <th>班级名称</th>
+            <th>学籍号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>身高</th>
+            <th>体重</th>
+            <th>肺活量</th>
+            <th>50米跑</th>
+            <th>立定跳远</th>
+            <th>坐位体前屈</th>
+            <th>800米跑</th>
+            <th>1000米跑</th>
+            <th>一分钟仰卧起坐</th>
+            <th>引体向上</th>
+        </tr>
+    </table>
+</div>
+<script src="tabledata.js"></script>
+<script src="inout.js"></script>
+</body>
+</html>
