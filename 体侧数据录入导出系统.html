@@ -19,19 +19,19 @@
         2、学生基础数据于excel中导入，各项成绩于系统内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。
 
 -->
-<formm>
-    <input type="file" onchange="importf(this)"
-           accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
-</formm>
-<br/>
+
+<input class="button" type="file" onchange="importf(this)"
+       accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+
+<br><br>
 <!--<button onclick="downloadExl(jsono)">导出</button>-->
 <a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
-<button onclick="fillTable()">刷新表格</button>
-<button onclick="getTableValue()">保存</button>
-<button onclick="downloadExl(data1)">导出体侧数据表格</button>
-<button onclick="downloadExl(data2)">导出免测表格</button>
+<button class="button" onclick="fillTable()">刷新表格</button>
+<button class="button" onclick="getTableValue()">保存</button>
+<button class="button" onclick="downloadExl(data1)">导出体侧数据表格</button>
+<button class="button" onclick="downloadExl(data2)">导出免测表格</button>
+<button class="button" onclick="downloadExl(testData)">test</button>
 
-<div id="excel-table"></div>
 <div>
     <table id="data-table">
         <tr id="head-row">
@@ -55,6 +55,7 @@
     </table>
 </div>
 
+<script src="test.js"></script>
 <script src="inout.js"></script>
 </body>
 </html>

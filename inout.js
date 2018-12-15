@@ -1,11 +1,14 @@
-var wb;//读取完成的数据
-var rABS = false; //是否将文件读取为二进制字符串
-var tmpDown; //导出的二进制对象
-let data1;
-let data2 = [];
-let removeData = [];
-let tb = document.getElementById('data-table');
-
+var wb;// 读取完成的数据
+var rABS = false; // 是否将文件读取为二进制字符串
+var tmpDown; // 导出的二进制对象
+let data1; // 从excel中获得的对象数组
+let data2 = []; // 免测学生的对象数组
+let removeData = []; // 记录免测学生的对象数组，用于后期再data1中移除免测学生
+let tb = document.getElementById('data-table'); // 表格对象
+/**
+ * 定义remove方法，移除data中val的元素
+ * @param val
+ */
 Array.prototype.remove = function (val) {
     var index = this.indexOf(val);
     if (index > -1) {
@@ -40,7 +43,7 @@ function importf(obj) {
         jsono = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
         //document.getElementById("demo").innerHTML = JSON.stringify(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
         data1 = jsono;
-        console.log(data1);
+        //console.log(JSON.stringify(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])));
         fillTable();
     };
     if (rABS) {
@@ -70,6 +73,7 @@ function fixdata(data) {
  * @param type
  */
 function downloadExl(json, type) {
+    // json[0]["及格率"]=0.85;
     var tmpdata = json[0];
     json.unshift({});
     var keyMap = []; //获取keys
@@ -240,4 +244,8 @@ function clearTable() {
         rowNum = rowNum - 1;
         i = i - 1;
     }
+}
+
+function getPassRate() {
+    
 }
