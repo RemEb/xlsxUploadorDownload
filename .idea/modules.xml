@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/xlsxDownload.iml" filepath="$PROJECT_DIR$/.idea/xlsxDownload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/xlsxUploadorDownload.iml" filepath="$PROJECT_DIR$/.idea/xlsxUploadorDownload.iml" />
     </modules>
   </component>
 </project>

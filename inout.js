@@ -1,36 +1,24 @@
 var wb;//读取完成的数据
 var rABS = false; //是否将文件读取为二进制字符串
-var jsono = [{ //测试数据
-    "保质期临期预警(天)": "adventLifecycle",
-    "商品标题": "title",
-    "建议零售价": "defaultPrice",
-    "高(cm)": "height",
-    "商品描述": "Description",
-    "保质期禁售(天)": "lockupLifecycle",
-    "商品名称": "skuName",
-    "商品简介": "brief",
-    "宽(cm)": "width",
-    "阿达": "asdz",
-    "货号": "goodsNo",
-    "商品条码": "skuNo",
-    "商品品牌": "brand",
-    "净容积(cm^3)": "netVolume",
-    "是否保质期管理": "isShelfLifeMgmt",
-    "是否串号管理": "isSNMgmt",
-    "商品颜色": "color",
-    "尺码": "size",
-    "是否批次管理": "isBatchMgmt",
-    "商品编号": "skuCode",
-    "商品简称": "shortName",
-    "毛重(g)": "grossWeight",
-    "长(cm)": "length",
-    "英文名称": "englishName",
-    "净重(g)": "netWeight",
-    "商品分类": "categoryId",
-    "这里超过了": 1111.0,
-    "保质期(天)": "expDate"
-}];
-function importf(obj) {//导入
+var tmpDown; //导出的二进制对象
+let data1;
+let data2 = [];
+let removeData = [];
+let tb = document.getElementById('data-table');
+
+Array.prototype.remove = function (val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
+/**
+ * 导入excel数据，并创建表格
+ * @param obj
+ */
+function importf(obj) {
+    let jsono;
     if (!obj.files) {
         return;
     }
@@ -49,9 +37,11 @@ function importf(obj) {//导入
         }
         //wb.SheetNames[0]是获取Sheets中第一个Sheet的名字
         //wb.Sheets[Sheet名]获取第一个Sheet的数据
-        console.log(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
         jsono = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-        document.getElementById("demo").innerHTML = JSON.stringify(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
+        //document.getElementById("demo").innerHTML = JSON.stringify(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
+        data1 = jsono;
+        console.log(data1);
+        fillTable();
     };
     if (rABS) {
         reader.readAsArrayBuffer(f);
@@ -60,7 +50,12 @@ function importf(obj) {//导入
     }
 }
 
-function fixdata(data) { //文件流转BinaryString
+/**
+ * 文件流转BinaryString
+ * @param data
+ * @returns {string}
+ */
+function fixdata(data) {
     var o = "",
         l = 0,
         w = 10240;
@@ -69,7 +64,11 @@ function fixdata(data) { //文件流转BinaryString
     return o;
 }
 
-var tmpDown; //导出的二进制对象
+/**
+ * 导出excel
+ * @param json
+ * @param type
+ */
 function downloadExl(json, type) {
     var tmpdata = json[0];
     json.unshift({});
@@ -110,14 +109,21 @@ function downloadExl(json, type) {
     }, 100);
 }
 
-function s2ab(s) { //字符串转字符流
+/**
+ * 字符串转字符流
+ * @param s
+ * @returns {ArrayBuffer}
+ */
+function s2ab(s) {
     var buf = new ArrayBuffer(s.length);
     var view = new Uint8Array(buf);
     for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
     return buf;
 }
 
-// 将指定的自然数转换为26进制表示。映射关系：[0-25] -> [A-Z]。
+/**
+ * 将指定的自然数转换为26进制表示。映射关系：[0-25] -> [A-Z]。
+ */
 function getCharCol(n) {
     let temCol = '',
         s = '',
@@ -128,4 +134,110 @@ function getCharCol(n) {
         n = (n - m) / 26
     }
     return s
+}
+
+/**
+ * 根据导入的excel，生成表格
+ */
+function fillTable() {
+    clearTable();
+    //console.log(Object.keys(data1[0]));
+    let theads = document.getElementsByTagName('th');
+
+    for (let j = 0; j < data1.length; j++) {
+        let newRow = document.createElement('tr');
+        for (let i = 0; i < theads.length; i++) {
+            let newTd = document.createElement('td');
+            //console.log(data1[j][theads[i].innerText]);
+            if (data1[j][theads[i].innerText] != null && data1[j][theads[i].innerText] != undefined) {
+                newTd.innerHTML = data1[j][theads[i].innerText];
+            } else {
+                //newTd.innerHTML = '0';
+                newTd.innerHTML = "<input class='numtext' onkeyup=\"checkValue(this);\" type='text' id='in" + j + "x" + i + "'>";
+            }
+            newRow.appendChild(newTd);
+        }
+        tb.appendChild(newRow);
+    }
+}
+
+/**
+ * 获得table中新输入的值，并添加到原先的数据数组中
+ */
+function getTableValue() {
+    let theads = document.getElementsByTagName('th');
+    // 遍历每一个input
+    for (let j = 0; j < data1.length; j++) {
+        for (let i = 0; i < theads.length; i++) {
+            if (document.getElementById("in" + j + "x" + +i) !== null) {
+                //console.log(document.getElementById("in" + j + "x" + +i).value);
+                //data1[j].push(document.getElementsByTagName('th')[i],document.getElementById("in" + j + "x" + +i).value);
+                //console.log(document.getElementsByTagName('th')[i].innerText);
+                //console.log(document.getElementById("in" + j + "x" + +i).value);
+                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + +i).value === '1') {
+                    data2.push(data1[j]);
+                    removeData.push(data1[j]);
+                    continue;
+                }
+                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + +i).value === '') {
+                    continue;
+                }
+                data1[j][document.getElementsByTagName('th')[i].innerText] = document.getElementById("in" + j + "x" + +i).value;
+            }
+        }
+    }
+    for (let j = 0; j < data1.length; j++) {
+        for (let i = 0; i < removeData.length; i++) {
+            if (data1[j] == removeData[i]) {
+                data1.remove(removeData[i]);
+            }
+        }
+    }
+    //console.log(data1);
+    //console.log(data2);
+}
+
+/**
+ * 检查input输入框中值是否符合标准要求
+ */
+function checkValue(obj) {
+    var index = obj.id.split('x')[1];
+    if (index == 8) {
+        if (/^\d+\.?\d{0,2}$/.test(obj.value)) {
+            obj.value = obj.value;
+        } else {
+            obj.value = obj.value.substring(0, obj.value.length - 1);
+            // alert("请输入正确的时间格式（精确到小数点后两位），如8.11（8秒11毫秒）！")
+        }
+    } else if (index == 11 || index == 12) {
+        if (/^\d+\.?\d{0,2}$/.test(obj.value)) {
+            obj.value = obj.value;
+        } else {
+            obj.value = obj.value.substring(0, obj.value.length - 1);
+            // alert("精确到小数点后两位，如4.45（4分钟45秒）！")
+        }
+        if (obj.value.split('.')[1] > 60) {
+            alert("请输入正确的时间格式，如4.45（4分钟45秒）！");
+            obj.value = 0;
+        }
+    } else if (index == 15) {
+        if (obj.value != 1 && obj.value != '') {
+            alert("若免责则填1，其他不填！");
+        }
+    } else {
+        if (obj.value.length == 1) {
+            obj.value = obj.value.replace(/[^1-9]/g, '')
+        } else {
+            obj.value = obj.value.replace(/\D/g, '')
+        }
+    }
+}
+
+function clearTable() {
+    let rowNum = tb.rows.length;
+    for (let i = 1; i < rowNum; i++) {
+        tb.deleteRow(i);
+        rowNum = rowNum - 1;
+        i = i - 1;
+    }
 }

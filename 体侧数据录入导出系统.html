@@ -6,19 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学生体侧数据导入导出系统1.0</title>
-    <script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+    <script src="xlsx.full.min.js"></script>
     <link rel="stylesheet" type="text/css" href="1.css"/>
 </head>
 <body>
+<!--
+学生数据导入时，确保表头正确：年级编号 班级名称 学籍号 姓名 性别 身高 体重 肺活量 50米跑	立定跳远 坐位体前屈 800米跑 1000米跑 一分钟仰卧起坐 引体向上
+若数据导入时已有成绩，需确保excel的数据的准确（可能会有0.000000000000003的误差 不影响测评结果）
+经测试，数据导入过大（千万级别）会造成网页崩溃
+支持两种数据写入方式：
+        1、学生基础数据、各项成绩于excel中导入，直接导入生成表格后，选择导出按钮即可完成计算。
+        2、学生基础数据于excel中导入，各项成绩于系统内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。
+
+-->
 <formm>
     <input type="file" onchange="importf(this)"
            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
 </formm>
 <br/>
-<button onclick="downloadExl(jsono)">导出</button>
+<!--<button onclick="downloadExl(jsono)">导出</button>-->
 <a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
-<button onclick="fillTable()">填充表格</button>
-<button onclick="getTableValue()">获取表格内容</button>
+<button onclick="fillTable()">刷新表格</button>
+<button onclick="getTableValue()">保存</button>
+<button onclick="downloadExl(data1)">导出体侧数据表格</button>
+<button onclick="downloadExl(data2)">导出免测表格</button>
 
 <div id="excel-table"></div>
 <div>
@@ -39,10 +50,11 @@
             <th>1000米跑</th>
             <th>一分钟仰卧起坐</th>
             <th>引体向上</th>
+            <th>是否免测（1是）</th>
         </tr>
     </table>
 </div>
-<script src="tabledata.js"></script>
+
 <script src="inout.js"></script>
 </body>
 </html>
