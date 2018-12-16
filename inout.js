@@ -5,6 +5,7 @@ let data1; // 从excel中获得的对象数组
 let data2 = []; // 免测学生的对象数组
 let removeData = []; // 记录免测学生的对象数组，用于后期再data1中移除免测学生
 let tb = document.getElementById('data-table'); // 表格对象
+
 /**
  * 定义remove方法，移除data中val的元素
  * @param val
@@ -73,7 +74,6 @@ function fixdata(data) {
  * @param type
  */
 function downloadExl(json, type) {
-    // json[0]["及格率"]=0.85;
     var tmpdata = json[0];
     json.unshift({});
     var keyMap = []; //获取keys
@@ -178,27 +178,19 @@ function getTableValue() {
                 //data1[j].push(document.getElementsByTagName('th')[i],document.getElementById("in" + j + "x" + +i).value);
                 //console.log(document.getElementsByTagName('th')[i].innerText);
                 //console.log(document.getElementById("in" + j + "x" + +i).value);
-                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + +i).value === '1') {
+                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + i).value === '1'
+                    && document.getElementById("in" + j + "x" + +i).value !== "") {
                     data2.push(data1[j]);
                     removeData.push(data1[j]);
                     continue;
                 }
-                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + +i).value === '') {
+                if (document.getElementsByTagName('th')[i].innerText === '是否免测（1是）' && document.getElementById("in" + j + "x" + i).value === '') {
                     continue;
                 }
-                data1[j][document.getElementsByTagName('th')[i].innerText] = document.getElementById("in" + j + "x" + +i).value;
+                data1[j][document.getElementsByTagName('th')[i].innerText] = document.getElementById("in" + j + "x" + i).value;
             }
         }
     }
-    for (let j = 0; j < data1.length; j++) {
-        for (let i = 0; i < removeData.length; i++) {
-            if (data1[j] == removeData[i]) {
-                data1.remove(removeData[i]);
-            }
-        }
-    }
-    //console.log(data1);
-    //console.log(data2);
 }
 
 /**
@@ -227,6 +219,7 @@ function checkValue(obj) {
     } else if (index == 15) {
         if (obj.value != 1 && obj.value != '') {
             alert("若免责则填1，其他不填！");
+            obj.value = 1;
         }
     } else {
         if (obj.value.length == 1) {
@@ -237,6 +230,9 @@ function checkValue(obj) {
     }
 }
 
+/**
+ * 清空表格
+ */
 function clearTable() {
     let rowNum = tb.rows.length;
     for (let i = 1; i < rowNum; i++) {
@@ -244,8 +240,64 @@ function clearTable() {
         rowNum = rowNum - 1;
         i = i - 1;
     }
+
 }
 
+/**
+ * 得到及格率
+ * @returns {*[]}
+ */
 function getPassRate() {
-    
+    let passData = [{
+        "及格率": (1 - count / all)
+    }];
+    return passData;
+}
+
+/**
+ * 在data1中将免测雪山删除
+ */
+function deleteRemoveData() {
+    for (let j = 0; j < data1.length; j++) {
+        for (let i = 0; i < removeData.length; i++) {
+            if (data1[j] == removeData[i]) {
+                data1.remove(removeData[i]);
+            }
+        }
+    }
+}
+
+/**
+ * 得到网页表格中数据的excel
+ * @param data
+ * @returns {Array}
+ */
+function getSaveData(data) {
+    let saveData = [];
+
+    for (var i = 0; i < data.length; i++) {
+        //规定顺序
+        saveData[i] = {
+            "年级编号": "",
+            "班级名称": "",
+            "学籍号": "",
+            "姓名": "",
+            "性别": "",
+            "身高": "",
+            "体重": "",
+            "肺活量": "",
+            "50米跑": "",
+            "立定跳远": "",
+            "坐位体前屈": "",
+            "800米跑": "",
+            "1000米跑": "",
+            "一分钟仰卧起坐": "",
+            "引体向上": "",
+        };
+        //调整并且输出调整后的顺序
+        for (var key in saveData[i]) {
+            saveData[i][key] = data[i][key];
+        }
+    }
+    return saveData;
 }

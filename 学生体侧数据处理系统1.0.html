@@ -16,12 +16,22 @@
 若数据导入时已有成绩，需确保excel的数据的准确（可能会有0.000000000000003的误差 不影响测评结果）
 经测试，数据导入千级以上会造成网页等待（也根据PC运算速度的实际情况而定）。
 输入完数据后切记保存后再导出。
+关闭后清楚缓存，不存放数据
+删除免测学生后 再二次导出会有问题
+导出后，表格中二次标注免测学生 造成问题
+不支持导出后，进行二次网页录入，但任可增加免测学生。
 
 支持两种数据写入方式：
         1、学生基础数据、各项成绩于excel中导入，直接导入生成表格后，选择导出按钮即可完成评估计算。
         2、学生基础数据于excel中导入，各项成绩于系统内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。
 操作技巧：在当前输入框完成输入后，可按Tab键快速跳到下一个输入框内
 
+问题：
+    及格率问题  解决
+    加分显示为0问题  忽略
+    删除重复 导致数据有问题
+    体重评分恒定 80
+    免测出现未记录学生 有几率报错  解决：有免测学生导出后，直接表格中删除
 -->
 
 <input class="button" type="file" onchange="importf(this)"
@@ -32,9 +42,12 @@
 <a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
 <button class="button" onclick="fillTable()">刷新表格</button>
 <button class="button" onclick="getTableValue()">保存</button>
-<button class="button" onclick="downloadExl(data1)">导出体侧数据表格</button>
-<button class="button" onclick="downloadExl(data2)">导出免测表格</button>
-<button class="button" onclick="downloadExl(testData)">test</button>
+<br>
+<button class="button" onclick="deleteRemoveData();downloadExl(getSaveData(data1));fillTable();">导出当前数据表格</button>
+<button class="button" onclick="deleteRemoveData();downloadExl(adjustArray(data1));fillTable();">导出体侧数据评估表格</button>
+<button class="button" onclick="deleteRemoveData();downloadExl(data2);fillTable();">导出免测表格</button>
+<button class="button" onclick="downloadExl(getPassRate());">导出及格率</button>
+
 
 <div>
     <table id="data-table">
@@ -59,6 +72,7 @@
     </table>
 </div>
 
+<script src="processData.js"></script>
 <script src="test.js"></script>
 <script src="inout.js"></script>
 </body>

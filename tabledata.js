@@ -12,8 +12,8 @@ Array.prototype.remove = function (val) {
  * 根据导入的excel，生成表格
  */
 function fillTable() {
+    clearTable();
     //console.log(Object.keys(data1[0]));
-    let tb = document.getElementById('data-table');
     let theads = document.getElementsByTagName('th');
 
     for (let j = 0; j < data1.length; j++) {
@@ -60,7 +60,7 @@ function getTableValue() {
     }
     for (let j = 0; j < data1.length; j++) {
         for (let i = 0; i < removeData.length; i++) {
-            if (data1[j] == removeData[i]){
+            if (data1[j] == removeData[i]) {
                 data1.remove(removeData[i]);
             }
         }
@@ -73,7 +73,6 @@ function getTableValue() {
  * 检查input输入框中值是否符合标准要求
  */
 function checkValue(obj) {
-
     var index = obj.id.split('x')[1];
     if (index == 8) {
         if (/^\d+\.?\d{0,2}$/.test(obj.value)) {
@@ -103,6 +102,15 @@ function checkValue(obj) {
         } else {
             obj.value = obj.value.replace(/\D/g, '')
         }
+    }
+}
+
+function clearTable() {
+    let rowNum = tb.rows.length;
+    for (let i = 1; i < rowNum; i++) {
+        tb.deleteRow(i);
+        rowNum = rowNum - 1;
+        i = i - 1;
     }
 }
 
