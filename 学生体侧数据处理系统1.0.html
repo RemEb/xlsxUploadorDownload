@@ -45,7 +45,8 @@
 <button class="button" onclick="deleteRemoveData();downloadExl(getSaveData(data1));fillTable();">导出当前数据表格</button>
 <button class="button" onclick="deleteRemoveData();downloadExl(adjustArray(data1));fillTable();">导出体侧数据评估表格</button>
 <button class="button" onclick="deleteRemoveData();downloadExl(data2);fillTable();">导出免测表格</button>
-<button class="button" onclick="downloadExl(getPassRate());">导出及格率</button>
+<button class="button" onclick="showPassRate(getPassRate());downloadExl(getPassRate());">导出及格率</button>
+<div id="pass-rate"></div>
 
 
 <div>

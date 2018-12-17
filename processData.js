@@ -779,7 +779,7 @@ function finalScore(data) {
             data[i]["总分等级"] = '及格';
         } else if (sum >= 80 && sum < 90) {
             data[i]["总分等级"] = '良好';
-        } else if (sum >= 90 && sum <= 100) {
+        } else if (sum >= 90 ) {
             data[i]["总分等级"] = '优秀';
         }
     }

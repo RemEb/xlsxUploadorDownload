@@ -301,3 +301,10 @@ function getSaveData(data) {
     }
     return saveData;
 }
+
+function showPassRate(rate) {
+    let showDiv = document.getElementById("pass-rate");
+    console.log(rate[0]);
+    showDiv.innerHTML = "<p>及格率为：" + rate[0]['及格率'] + "</p>";
+
+}
