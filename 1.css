@@ -18,21 +18,43 @@ text-align: center;
 background: none;
 color: black;
 }*/
-body {
+/*body {
     font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
     color: #4f6b72;
     background: #E6EAE9;
+}*/
+.head{
+    background-color: rgb(91,192,222);
+    color: white;
+    padding: 20px 0 10px 0;
+    font-size: 20px;
+}
+.head span{
+    margin-left: 10px;
+}
+
+
+h2{
+    text-align: center;
+    color: white;
 }
 
 a {
     color: #c75f3e;
+}
+table {
+    min-height: 25px;
+    min-width: 50px;
+    line-height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 50px;
 }
 
 #data-table {
     padding: 0;
     margin: 20px 0 0 0;
 }
-
 caption {
     padding: 0 0 5px 0;
     width: 700px;
@@ -42,7 +64,7 @@ caption {
 
 th {
     font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-    color: #4f6b72;
+    /*color: #4f6b72;*/
     border-right: 1px solid #C1DAD7;
     border-bottom: 1px solid #C1DAD7;
     border-top: 1px solid #C1DAD7;
@@ -50,7 +72,7 @@ th {
     text-transform: uppercase;
     text-align: left;
     padding: 6px 6px 6px 12px;
-    background: #CAE8EA;
+    /*background: #CAE8EA;*/
 }
 
 th.nobg {
@@ -66,7 +88,7 @@ td {
     background: #fff;
     font-size: 11px;
     padding: 6px 6px 6px 12px;
-    color: #4f6b72;
+    /*color: #4f6b72;*/
 }
 
 td.alt {
@@ -101,51 +123,6 @@ background: none;
 color: black;
 }
 
-/**********/
-
-.button {
-    display: inline-block;
-    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
-    *display: inline;
-    vertical-align: baseline;
-    margin: 0 2px;
-    outline: none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font: 14px/100% Arial, Helvetica, sans-serif;
-    padding: .5em 2em .55em;
-    text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    -webkit-border-radius: .5em;
-    -moz-border-radius: .5em;
-    border-radius: .5em;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    background-color: #C1DAD7;
-    color: #4f6b72
-}
-.button:hover {
-    text-decoration: none;
-}
-.button:active {
-    position: relative;
-    top: 1px;
-}
-
-.bigrounded {
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-}
-.medium {
-    font-size: 12px;
-    padding: .4em 1.5em .42em;
-}
-.small {
-    font-size: 11px;
-    padding: .2em 1em .275em;
-}
 
 /**
  * file button
