@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3ad9451-35ae-45ff-ad56-a712d1dd18d6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.css" beforeDir="false" afterPath="$PROJECT_DIR$/1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/学生体侧数据处理系统1.0.html" beforeDir="false" afterPath="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processData.js" beforeDir="false" afterPath="$PROJECT_DIR$/processData.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,10 +17,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="学生体侧数据评估平台1.0.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="学生体侧数据评估平台1.0.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
+            <state relative-caret-position="561">
               <caret line="78" column="97" selection-start-line="78" selection-start-column="97" selection-end-line="78" selection-end-column="97" />
             </state>
           </provider>
@@ -30,17 +29,17 @@
       <file leaf-file-name="inout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1536">
+            <state relative-caret-position="5112">
               <caret line="213" column="9" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="processData.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="processData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="781" column="32" selection-start-line="781" selection-start-column="32" selection-end-line="781" selection-end-column="32" />
+            <state relative-caret-position="358">
+              <caret line="783" column="12" selection-start-line="783" selection-start-column="12" selection-end-line="783" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -48,8 +47,8 @@
       <file leaf-file-name="1.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="960">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -111,13 +110,13 @@
         <option value="$PROJECT_DIR$/tabledata.js" />
         <option value="$PROJECT_DIR$/tabledata.js" />
         <option value="$PROJECT_DIR$/test.js" />
-        <option value="$PROJECT_DIR$/processData.js" />
         <option value="$PROJECT_DIR$/inout.js" />
         <option value="$PROJECT_DIR$/inout.js" />
         <option value="$PROJECT_DIR$/学生体侧数据处理系统1.0.html" />
         <option value="$PROJECT_DIR$/学生体侧数据处理平台1.0.html" />
         <option value="$PROJECT_DIR$/1.css" />
         <option value="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" />
+        <option value="$PROJECT_DIR$/processData.js" />
       </list>
     </option>
   </component>
@@ -130,9 +129,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="112" />
-    <option name="y" value="54" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="233" />
+    <option name="y" value="24" />
     <option name="width" value="1601" />
     <option name="height" value="964" />
   </component>
@@ -144,7 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,6 +154,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,12 +200,13 @@
       <workItem from="1544936838245" duration="15818000" />
       <workItem from="1544954627068" duration="9684000" />
       <workItem from="1545036583597" duration="1539000" />
-      <workItem from="1545051515954" duration="2765000" />
+      <workItem from="1545051515954" duration="2862000" />
+      <workItem from="1545106605788" duration="1056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72480000" />
+    <option name="totallyTimeSpent" value="73633000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -218,17 +218,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1050" extended-state="6" />
+    <frame x="233" y="24" width="1601" height="964" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1512118" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15099168" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32962963" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32928476" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32962963" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.20958751" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20864198" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -294,9 +294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -363,9 +360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -425,9 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -487,9 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -549,9 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -574,29 +559,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
+        <state relative-caret-position="5112">
           <caret line="213" column="9" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="781" column="32" selection-start-line="781" selection-start-column="32" selection-end-line="781" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="960">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
+        <state relative-caret-position="561">
           <caret line="78" column="97" selection-start-line="78" selection-start-column="97" selection-end-line="78" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="783" column="12" selection-start-line="783" selection-start-column="12" selection-end-line="783" selection-end-column="12" />
         </state>
       </provider>
     </entry>

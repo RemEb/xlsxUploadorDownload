@@ -593,7 +593,6 @@ function jumpingScore(data) {
 
 //男：引体向上   女：仰卧起坐
 function upAndSit(data) {
-
     for (var i = 0; i < data.length; i++) {
         var sex = parseInt(data[i]["性别"]);
         //男
@@ -747,8 +746,18 @@ function finalScore(data) {
                 add1 = parseInt(data[i]["引体向上评分"]) - 100;
             if (parseInt(data[i]["1000米跑评分"]) > 100)
                 add2 = parseInt(data[i]["1000米跑评分"]) - 100;
-            data[i]["引体向上附加分"] = add1.toString();
-            data[i]["1000米跑附加分"] = add2.toString();
+
+            if (add1 != 0) {
+                data[i]["引体向上附加分"] = add1.toString();
+            }else{
+                data[i]["引体向上附加分"]="";
+            }
+            if (add2 != 0) {
+                data[i]["1000米跑附加分"] = add2.toString();
+            }else {
+                data[i]["1000米跑附加分"] = "";
+            }
+
             //总分=∑各项标准成绩（满分100）*权重+∑附加分（满分20）
             sum = parseInt(data[i]["体重指数评分"]) * 0.15 + parseInt(data[i]["肺活量评分"]) * 0.15 + parseInt(data[i]["50米跑评分"]) * 0.2 +
                 parseInt(data[i]["坐位体前屈评分"]) * 0.1 + parseInt(data[i]["立定跳远评分"]) * 0.1 +
@@ -761,8 +770,18 @@ function finalScore(data) {
                 add1 = parseInt(data[i]["一分钟仰卧起坐评分"]) - 100;
             if (parseInt(data[i]["800米跑评分"]) > 100)
                 add2 = parseInt(data[i]["800米跑评分"]) - 100;
-            data[i]["一分钟仰卧起坐附加分"] = add1.toString();
-            data[i]["800米跑附加分"] = add2.toString();
+
+            if (add1 != 0) {
+                data[i]["一分钟仰卧起坐附加分"] = add1.toString();
+            }else{
+                data[i]["一分钟仰卧起坐附加分"]="";
+            }
+            if (add2 != 0) {
+                data[i]["800米跑附加分"] = add2.toString();
+            }else {
+                data[i]["800米跑附加分"] = "";
+            }
+
             //总分=∑各项标准成绩（满分100）*权重+∑附加分（满分20）
             sum = parseInt(data[i]["体重指数评分"]) * 0.15 + parseInt(data[i]["肺活量评分"]) * 0.15 + parseInt(data[i]["50米跑评分"]) * 0.2 +
                 parseInt(data[i]["坐位体前屈评分"]) * 0.1 + parseInt(data[i]["立定跳远评分"]) * 0.1 +
@@ -779,7 +798,7 @@ function finalScore(data) {
             data[i]["总分等级"] = '及格';
         } else if (sum >= 80 && sum < 90) {
             data[i]["总分等级"] = '良好';
-        } else if (sum >= 90 ) {
+        } else if (sum >= 90) {
             data[i]["总分等级"] = '优秀';
         }
     }
