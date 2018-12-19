@@ -23,6 +23,9 @@ color: black;
     color: #4f6b72;
     background: #E6EAE9;
 }*/
+body{
+    background-color: aliceblue;
+}
 .head{
     background-color: rgb(91,192,222);
     color: white;
@@ -31,6 +34,9 @@ color: black;
 }
 .head span{
     margin-left: 10px;
+}
+.buttons{
+    margin-left: 20px;
 }
 
 
@@ -70,8 +76,8 @@ th {
     border-top: 1px solid #C1DAD7;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-align: left;
     padding: 6px 6px 6px 12px;
+    text-align:center;
     /*background: #CAE8EA;*/
 }
 

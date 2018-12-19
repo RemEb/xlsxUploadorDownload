@@ -217,6 +217,9 @@ function runningScore(data) {
                 data[i]["1000米跑评分"] = "10";
             } else if (thsoundTime > 6.12 && thsoundTime <= 9.00) {
                 data[i]["1000米跑评分"] = "0";
+            }else if (thsoundTime > 9.00){
+                data[i]["1000米跑评分"] = "0";
+
             }
         }
         //女
@@ -285,6 +288,8 @@ function runningScore(data) {
                 data[i]["800米跑评分"] = "10";
             } else if (hundredTime > 5.24 && hundredTime <= 9.00) {
                 data[i]["800米跑评分"] = "0";
+            }else if (hundredTime > 9.00) {
+                data[i]["800米跑评分"] = "0";
             }
         }
     }
@@ -339,6 +344,9 @@ function fiftyScore(data) {
                 data[i]["50米跑评分"] = "10";
             else if (fiftyTime > 10.1 && fiftyTime <= 20.0)
                 data[i]["50米跑评分"] = "0";
+            else  if (fiftyTime > 20.0) {
+                data[i]["50米跑评分"] = "0";
+            }
 
         }
         //女
@@ -385,6 +393,9 @@ function fiftyScore(data) {
                 data[i]["50米跑评分"] = "10";
             else if (fiftyTime > 11.3 && fiftyTime <= 20.0)
                 data[i]["50米跑评分"] = "0";
+            else  if (fiftyTime > 20.0) {
+                data[i]["50米跑评分"] = "0";
+            }
         }
     }
 }
@@ -845,6 +856,7 @@ function adjustArray(data) {
         //调整并且输出调整后的顺序
         for (var key in newData[i]) {
             newData[i][key] = data[i][key];
+
             if (key == "总分" && data[i][key] < 60 && data[i][key] > 0) {
                 if (data[i]["性别"] == "1" || data[i]["性别"] == "2")
                     count++;
@@ -854,5 +866,7 @@ function adjustArray(data) {
             }
         }
     }
+    newData[0]["及格率"] = getPassRate();
+
     return newData;
 }

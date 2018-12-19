@@ -248,14 +248,12 @@ function clearTable() {
  * @returns {*[]}
  */
 function getPassRate() {
-    let passData = [{
-        "及格率": (1 - count / all)
-    }];
-    return passData;
+    let passData = 1 - count / all;
+    return passData.toFixed(2);
 }
 
 /**
- * 在data1中将免测雪山删除
+ * 在data1中将免测学生删除
  */
 function deleteRemoveData() {
     for (let j = 0; j < data1.length; j++) {
@@ -302,9 +300,3 @@ function getSaveData(data) {
     return saveData;
 }
 
-function showPassRate(rate) {
-    let showDiv = document.getElementById("pass-rate");
-    console.log(rate[0]);
-    showDiv.innerHTML = "<p>及格率为：" + rate[0]['及格率'] + "</p>";
-
-}
