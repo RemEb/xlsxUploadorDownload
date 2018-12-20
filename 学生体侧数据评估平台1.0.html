@@ -29,30 +29,47 @@
 
 问题：
     及格率问题  解决
-    加分显示为0问题  忽略
+    加分显示为0问题  解决
     删除重复 导致数据有问题
     体重评分恒定 80  解决
     免测出现未记录学生 有几率报错  解决：有免测学生导出后，直接表格中删除
-    表头数据 不居中
+    及格率显示同一张excel 解决
+    后续导入bootstrap xlsx
+    总分显示NAN
+    免测表格还有其他数据信息
 -->
 <div class="head">
     <span class="glyphicon glyphicon-user"></span>
     <span>学生体侧数据评估平台</span>
 </div>
-<br>
-<div class="buttons">
+<div id="info">
+    <div class="text">
+        <p class="text-head">使用说明：</p>
+        <p class="text-head2">支持两种数据写入方式：</p>
+        <p> 1、学生基础数据、各项成绩于excel中导入，直接导入生成表格后，选择导出按钮即可完成评估计算。（推荐）</p>
+        <p> 2、学生基础数据于excel中导入，各项成绩于平台内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。</p>
+        <p class="text-head2">有两种导出表格</p>
+        <!--<p> 1、导出页面中显示的表格，但不包含已输入的免测学生</p>-->
+        <p> 1、导出评估后的表格</p>
+        <p> 2、导出免测学生的表格</p>
+        <p class="text-head" style="color: red">注意：</p>
+        <p>1、在平台内输入数据后一定要按<span style="color: red;font-weight: bold">保存</span>！</p>
+        <p>2、学生数据导入时，确保表头名称正确，如下:</p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp年级编号 班级名称 学籍号 姓名 性别 身高 体重 肺活量 50米跑 立定跳远 坐位体前屈 800米跑 1000米跑 一分钟仰卧起坐 引体向上</p>
+        <p>3、导出以后将关闭编辑功能</p>
+    </div>
+</div>
+
+
+<div class="button-group">
     <input class="btn btn-info " type="file" onchange="importf(this)"
            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
-    <br>
     <a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
     <button class="btn btn-info" onclick="fillTable()">刷新表格</button>
     <button class="btn btn-info" onclick="getTableValue()">保存</button>
     <br>
-    <br>
-    <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(getSaveData(data1));fillTable();">导出当前数据表格
-    </button>
-    <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(adjustArray(data1));fillTable();">导出体侧数据评估表格
-    </button>
+    <!--<button class="btn btn-info" onclick="deleteRemoveData();downloadExl(getSaveData(data1));fillTable();">导出当前数据表格</button>-->
+    <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(adjustArray(data1));fillTable();">导出体侧数据评估表格</button>
     <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(data2);fillTable();">导出免测表格</button>
     <div id="pass-rate"></div>
 </div>
@@ -79,10 +96,10 @@
         </tr>
     </table>
 </div>
-<button class="btn btn-info" onclick="getTableValue()" style="float: right;margin: 10px 20px 10px 0">输入完成后记得按我保存！</button>
+<button class="btn btn-info" onclick="getTableValue()" style="float: right;margin: 10px 20px 10px 0">输入完成后记得按我保存！
+</button>
 
 <script src="processData.js"></script>
-<script src="test.js"></script>
 <script src="inout.js"></script>
 </body>
 </html>
