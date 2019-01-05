@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生体侧数据处理系统1.0</title>
+    <script src="xlsx.full.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="1.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<!--
+注意事项：
+学生数据导入时，确保表头正确： 年级编号 班级名称 学籍号 姓名 性别 身高 体重 肺活量 50米跑	立定跳远 坐位体前屈 800米跑 1000米跑 一分钟仰卧起坐 引体向上
+若数据导入时已有成绩，需确保excel的数据的准确（可能会有0.000000000000003的误差 不影响测评结果）
+经测试，数据导入千级以上会造成网页等待（也根据PC运算速度的实际情况而定）。
+输入完数据后切记保存后再导出。
+关闭后清楚缓存，不存放数据
+不支持导出后，进行二次网页录入，但仍可增加免测学生；
+若需要继续输入，可以到处当前网页表格，再导入进去。
+
+支持两种数据写入方式：
+        1、学生基础数据、各项成绩于excel中导入，直接导入生成表格后，选择导出按钮即可完成评估计算。
+        2、学生基础数据于excel中导入，各项成绩于系统内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。
+操作技巧：在当前输入框完成输入后，可按Tab键快速跳到下一个输入框内
+
+问题：
+    及格率问题  解决
+    加分显示为0问题  解决
+    删除重复 导致数据有问题
+    体重评分恒定 80  解决
+    免测出现未记录学生 有几率报错  解决：有免测学生导出后，直接表格中删除
+    及格率显示同一张excel 解决
+    后续导入bootstrap xlsx
+    总分显示NAN
+    免测表格还有其他数据信息
+-->
+<div class="head">
+    <span class="glyphicon glyphicon-user"></span>
+    <span>学生体侧数据评估平台</span>
+</div>
+<div id="info">
+    <div class="text">
+        <p class="text-head">使用说明：</p>
+        <p class="text-head2">支持两种数据写入方式：</p>
+        <p> 1、学生基础数据、各项成绩于excel中导入，直接导入生成表格后，选择导出按钮即可完成评估计算。（推荐）</p>
+        <p> 2、学生基础数据于excel中导入，各项成绩于平台内输入，输入完成后点击保存按钮，之后选择导出按钮即可完成计算。</p>
+        <p class="text-head2">有两种导出表格</p>
+        <!--<p> 1、导出页面中显示的表格，但不包含已输入的免测学生</p>-->
+        <p> 1、导出评估后的表格</p>
+        <p> 2、导出免测学生的表格</p>
+        <p class="text-head" style="color: red">注意：</p>
+        <p>1、在平台内输入数据后一定要按<span style="color: red;font-weight: bold">保存</span>！</p>
+        <p>2、学生数据导入时，确保表头名称正确，如下:</p>
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp年级编号 班级名称 学籍号 姓名 性别 身高 体重 肺活量 50米跑 立定跳远 坐位体前屈 800米跑 1000米跑 一分钟仰卧起坐 引体向上</p>
+        <p>3、导出以后将关闭编辑功能</p>
+        <p>4、千级数据以上会造成页面等待，请稍后</p>
+    </div>
+</div>
+
+
+<div class="button-group">
+    <input class="btn btn-info " type="file" onchange="importf(this)"
+           accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+    <a href="" download="这里是下载的文件名.xlsx" id="hf"></a>
+    <button class="btn btn-info" onclick="fillTable()">刷新表格</button>
+    <button class="btn btn-info" onclick="getTableValue()">保存</button>
+    <br>
+    <!--<button class="btn btn-info" onclick="deleteRemoveData();downloadExl(getSaveData(data1));fillTable();">导出当前数据表格</button>-->
+    <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(adjustArray(data1));fillTable();">导出体侧数据评估表格</button>
+    <button class="btn btn-info" onclick="deleteRemoveData();downloadExl(data2);fillTable();">导出免测表格</button>
+    <div id="pass-rate"></div>
+</div>
+
+<div>
+    <table id="data-table" class="table table-bordered table-hover">
+        <tr id="head-row">
+            <th>年级编号</th>
+            <th>班级名称</th>
+            <th>学籍号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>身高</th>
+            <th>体重</th>
+            <th>肺活量</th>
+            <th>50米跑</th>
+            <th>立定跳远</th>
+            <th>坐位体前屈</th>
+            <th>800米跑</th>
+            <th>1000米跑</th>
+            <th>一分钟仰卧起坐</th>
+            <th>引体向上</th>
+            <th>是否免测（1是）</th>
+        </tr>
+    </table>
+</div>
+<button class="btn btn-info" onclick="getTableValue()" style="float: right;margin: 10px 20px 10px 0">输入完成后记得按我保存！
+</button>
+
+<script src="processData.js"></script>
+<script src="inout.js"></script>
+</body>
+</html>

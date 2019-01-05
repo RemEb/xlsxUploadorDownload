@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3ad9451-35ae-45ff-ad56-a712d1dd18d6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.css" beforeDir="false" afterPath="$PROJECT_DIR$/1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" beforeDir="false" afterPath="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tabledata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,20 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="学生体侧数据评估平台1.0.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="inout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="245" column="3" selection-start-line="245" selection-start-column="3" selection-end-line="245" selection-end-column="3" />
+            <state relative-caret-position="216">
+              <caret line="253" selection-end-line="302" />
             </state>
           </provider>
         </entry>
@@ -45,8 +31,8 @@
       <file leaf-file-name="processData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/processData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="395" column="41" selection-start-line="395" selection-start-column="41" selection-end-line="395" selection-end-column="41" />
+            <state relative-caret-position="192">
+              <caret line="402" column="7" selection-end-line="871" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -54,17 +40,17 @@
       <file leaf-file-name="1.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="288">
+              <caret line="12" column="12" selection-end-line="143" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tabledata.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tabledata.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="384">
+              <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -75,6 +61,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -123,6 +110,7 @@
         <option value="$PROJECT_DIR$/inout.js" />
         <option value="$PROJECT_DIR$/1.css" />
         <option value="$PROJECT_DIR$/学生体侧数据评估平台1.0.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -136,10 +124,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="179" />
-    <option name="y" value="103" />
+    <option name="x" value="132" />
+    <option name="y" value="27" />
     <option name="width" value="1629" />
-    <option name="height" value="950" />
+    <option name="height" value="1016" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -149,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,13 +149,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Code/web/xlsxDownload/in.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../banker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
@@ -212,11 +201,13 @@
       <workItem from="1545214853729" duration="3353000" />
       <workItem from="1545280661250" duration="5341000" />
       <workItem from="1545286307686" duration="46000" />
+      <workItem from="1545289682076" duration="822000" />
+      <workItem from="1545831096683" duration="898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83048000" />
+    <option name="totallyTimeSpent" value="84768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -228,8 +219,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="179" y="103" width="1629" height="950" extended-state="0" />
-    <editor active="true" />
+    <frame x="132" y="27" width="1629" height="1016" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14833438" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32962963" />
@@ -238,7 +228,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32962963" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49947312" weight="0.18765432" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49947312" visible="true" weight="0.17285383" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -262,13 +252,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -276,24 +259,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
     <entry file="file://$PROJECT_DIR$/data.js" />
     <entry file="file://$PROJECT_DIR$/in.html" />
     <entry file="file://$PROJECT_DIR$/out.html" />
     <entry file="file://$PROJECT_DIR$/in.js" />
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1671">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
     <entry file="file://$PROJECT_DIR$/out.js" />
     <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -329,13 +300,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
     <entry file="file://$PROJECT_DIR$/1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -376,13 +341,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
     <entry file="file://$PROJECT_DIR$/in.html" />
     <entry file="file://$PROJECT_DIR$/data.js" />
     <entry file="file://$PROJECT_DIR$/out.html" />
@@ -409,51 +368,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
     <entry file="file://$PROJECT_DIR$/in.html" />
     <entry file="file://$PROJECT_DIR$/out.html" />
     <entry file="file://$PROJECT_DIR$/in.js" />
     <entry file="file://$PROJECT_DIR$/out.js" />
-    <entry file="file://$PROJECT_DIR$/tabledata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data.js" />
     <entry file="file://$PROJECT_DIR$/test.js" />
-    <entry file="file://$PROJECT_DIR$/inout.js">
+    <entry file="file://$PROJECT_DIR$/tabledata.js" />
+    <entry file="file://$PROJECT_DIR$/1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="245" column="3" selection-start-line="245" selection-start-column="3" selection-end-line="245" selection-end-column="3" />
+        <state relative-caret-position="288">
+          <caret line="12" column="12" selection-end-line="143" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/processData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="395" column="41" selection-start-line="395" selection-start-column="41" selection-end-line="395" selection-end-column="41" />
+        <state relative-caret-position="192">
+          <caret line="402" column="7" selection-end-line="871" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1.css">
+    <entry file="file://$PROJECT_DIR$/inout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="216">
+          <caret line="253" selection-end-line="302" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/学生体侧数据评估平台1.0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        <state relative-caret-position="-288">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#v:textbox#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="61" column="6" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
         </state>
       </provider>
     </entry>
