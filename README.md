@@ -10,5 +10,4 @@
 
 
 ### 注意点
-各部分功能js文件都集成于index.js，但开发都是分功能进行开发的
 学生体侧数据评估平台.html 是将bootstrap、jquery、sheet.js都集成在html文件里，便于直接使用
